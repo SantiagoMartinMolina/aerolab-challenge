@@ -2,7 +2,11 @@
 
 :root {
   --primary: #FB7B04;
-  --bg-color-gray: #ededed
+  --bg-white: #fafafa;
+  --bg-gray: #ededed;
+  --text-white: #fafafa;
+  --text-gray-100: #a3a3a3;
+  --text-gray-200: #616161;
 }
 
 body {
@@ -15,13 +19,13 @@ body {
 }
 
 #root {
-  text-align: center;
-  background-color: white;
+  /* text-align: center; */
+  background-color: var(--bg-white);
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   color: #333;
 }
 
