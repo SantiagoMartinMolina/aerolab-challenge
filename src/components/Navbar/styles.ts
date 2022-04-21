@@ -8,4 +8,8 @@ export const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 1em 2.625em;
+
+  @media (max-width: 500px) {
+    padding: 1em;
+  }
 `;
