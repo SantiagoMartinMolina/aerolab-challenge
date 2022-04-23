@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
   h1 {
     font-size: 4em;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--white);
     margin: 0 0 0.75em 2.0625em;
     text-shadow: 1px 1px 7px #555;
   }

@@ -4,9 +4,12 @@
   --primary: #FB7B04;
   --bg-white: #fafafa;
   --bg-gray: #ededed;
-  --text-white: #fafafa;
-  --text-gray-100: #a3a3a3;
-  --text-gray-200: #616161;
+  --light-blue: #0ad4fa;
+  --white: #fafafa;
+  --gray-light: #d9d9d9;
+  --gray-100: #a3a3a3;
+  --gray-200: #616161;
+
 }
 
 body {
@@ -26,7 +29,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center; */
-  color: #333;
+  /* color: #333; */
 }
 
 * {
