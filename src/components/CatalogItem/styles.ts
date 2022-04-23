@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const StyledCatalogItem = styled.div`
-  width: 100%;
-  height: 100%;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.15);
   padding: 1.5em;
   display: flex;
@@ -63,5 +61,14 @@ export const StyledCatalogItem = styled.div`
         height: 20px;
       }
     }
+  }
+
+  @media (min-width: 1190px) {
+    max-width: 280px;
+    max-height: 280px;
+  }
+
+  @media (max-width: 700px) {
+    padding: 1em;
   }
 `;

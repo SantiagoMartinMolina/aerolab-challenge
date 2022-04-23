@@ -10,6 +10,7 @@ const Main = () => {
     <StyledMain>
       <ProductControl />
       <Catalog />
+      <ProductControl />
     </StyledMain>
   );
 };
