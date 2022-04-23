@@ -38,9 +38,24 @@ export const StyledFilter = styled.div`
 
     &:focus {
       outline: none;
-      /* transform: scale(0.95);
-      outline: 4px dotted var(--primary);
-      outline-offset: 0.15em; */
+    }
+  }
+
+  @media (max-width: 1000px) {
+    p {
+      font-size: 1em;
+    }
+
+    button {
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding: 0;
+    gap: 1em;
+    button {
+      padding: 0.25em 0.75em;
     }
   }
 `;
