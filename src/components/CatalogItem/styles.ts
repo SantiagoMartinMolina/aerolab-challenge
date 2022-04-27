@@ -48,6 +48,7 @@ export const StyledCatalogItem = styled.div`
         border-radius: 100px;
         color: var(--gray-200);
         font-family: inherit;
+        font-weight: 700;
         background-color: var(--bg-white);
         border: none;
         font-size: 1.125em;
@@ -70,6 +71,12 @@ export const StyledCatalogItem = styled.div`
 
         &:focus {
           outline: none;
+        }
+
+        &[disabled] {
+          opacity: 0.8;
+          cursor: default;
+          transform: none !important;
         }
       }
     }

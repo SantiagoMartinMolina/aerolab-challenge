@@ -1,7 +1,6 @@
 import React, {FC, useState} from "react";
+import toast, {Toaster} from "react-hot-toast";
 
-import BuyBlue from "~/assets/icons/BuyBlue";
-import BuyWhite from "~/assets/icons/BuyWhite";
 import Coin from "~/assets/icons/Coin";
 import useUserContext from "~/hooks/useUserContext";
 import Spinner from "../Spinner";
@@ -27,6 +26,12 @@ const CatalogItem: FC<Props> = ({category, name, img, cost, _id}) => {
     setloading(true);
     redeemNow(cost, _id).then((res) => {
       setloading(false);
+
+      if (res.data) {
+        toast.success(res.data.message, {id: _id, duration: 1500});
+      } else {
+        toast.error("error", {id: _id, duration: 1500});
+      }
     });
   };
 
@@ -58,12 +63,13 @@ const CatalogItem: FC<Props> = ({category, name, img, cost, _id}) => {
             </p>
             <button disabled={loading ? true : undefined} onClick={handleClick}>
               {loading && <Spinner />}
-              {loading && "redeeming now"}
-              {!loading && "redeem"}
+              {loading && "Redeeming"}
+              {!loading && "Redeem"}
             </button>
           </div>
         </div>
       ) : null}
+      <Toaster />
     </StyledCatalogItem>
   );
 };

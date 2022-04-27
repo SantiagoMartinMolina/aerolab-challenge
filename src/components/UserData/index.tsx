@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
+import toast, {Toaster} from "react-hot-toast";
 
 import useUserContext from "~/hooks/useUserContext";
 import Coin from "../../assets/icons/Coin";
+import Spinner from "../Spinner";
 
 import {StyledUserData} from "./styles";
 
@@ -10,6 +12,7 @@ const UserData = () => {
     state: fetchState,
     dispatch: {addPoints},
   } = useUserContext();
+  const [loading, setloading] = useState(false);
 
   if (fetchState.state === "loading" || fetchState.state === "idle") {
     return <div>cargando...</div>;
@@ -20,7 +23,17 @@ const UserData = () => {
   }
 
   const handleButton = () => {
-    addPoints(1000).then((res) => console.log(res));
+    setloading(true);
+
+    addPoints(1000).then((res) => {
+      setloading(false);
+
+      if (res.data) {
+        toast.success(res.data.message, {duration: 1500});
+      } else {
+        toast.error("An error has occurred", {duration: 1500});
+      }
+    });
   };
 
   return (
@@ -29,7 +42,10 @@ const UserData = () => {
       <p className="user-points">
         {fetchState.data.points} <Coin />
       </p>
-      <button onClick={handleButton}>Agregar puntos</button>
+      <button disabled={loading ? true : undefined} onClick={handleButton}>
+        {loading && <Spinner />}
+        {!loading && "➕"}
+      </button>
     </StyledUserData>
   );
 };
