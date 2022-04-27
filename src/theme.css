@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 :root {
-  --primary: #FB7B04;
+  --bg-orange: rgba(251, 123, 4, 0.5);
   --bg-white: #fafafa;
   --bg-gray: #ededed;
   --light-blue: #0ad4fa;

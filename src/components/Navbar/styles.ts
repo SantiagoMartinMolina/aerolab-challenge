@@ -8,7 +8,7 @@ export const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 1em 2.625em;
-  z-index: 1;
+  z-index: 10;
   background-color: var(--bg-white);
 
   @media (max-width: 500px) {
