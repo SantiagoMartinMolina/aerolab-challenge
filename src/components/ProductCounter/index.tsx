@@ -1,11 +1,18 @@
-import React from "react";
+import React, {FC} from "react";
 
 import {StyledProductCounter} from "./styles";
 
-const ProductCounter = () => {
+interface Props {
+  currentPage: number;
+  quantity: number | undefined;
+}
+
+const ProductCounter: FC<Props> = ({currentPage, quantity}) => {
   return (
     <StyledProductCounter>
-      <p>16 of 32 products</p>
+      <p>
+        {currentPage + 16} of {quantity} products
+      </p>
     </StyledProductCounter>
   );
 };
