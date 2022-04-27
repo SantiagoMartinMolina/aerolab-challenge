@@ -1,13 +1,17 @@
-import React from "react";
+import React, {FC} from "react";
 
 import {StyledFilter} from "./styles";
 
-const Filter = () => {
+interface Props {
+  sortItems: (sortBy: string) => void;
+}
+
+const Filter: FC<Props> = ({sortItems}) => {
   return (
     <StyledFilter>
       <p>Sort by: </p>
-      <button>Lowest price</button>
-      <button>Highest price</button>
+      <button onClick={() => sortItems("lowest")}>Lowest price</button>
+      <button onClick={() => sortItems("highest")}>Highest price</button>
     </StyledFilter>
   );
 };
