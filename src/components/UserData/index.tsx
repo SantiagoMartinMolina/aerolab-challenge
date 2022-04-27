@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import toast, {Toaster} from "react-hot-toast";
+import toast from "react-hot-toast";
 
 import useUserContext from "~/hooks/useUserContext";
 import Coin from "../../assets/icons/Coin";
@@ -15,7 +15,7 @@ const UserData = () => {
   const [loading, setloading] = useState(false);
 
   if (fetchState.state === "loading" || fetchState.state === "idle") {
-    return <div>cargando...</div>;
+    return <Spinner />;
   }
 
   if (fetchState.state === "error" || !fetchState.data) {

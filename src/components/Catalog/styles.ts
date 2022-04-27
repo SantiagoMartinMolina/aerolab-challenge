@@ -10,3 +10,16 @@ export const StyledCatalog = styled.section`
     margin: 1em 0;
   }
 `;
+
+export const StyledContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  margin: 5em;
+  min-height: 80vh;
+  div {
+    width: 10em;
+    height: 10em;
+    border: 7px solid var(--gray-light);
+    border-right-color: var(--light-blue);
+  }
+`;

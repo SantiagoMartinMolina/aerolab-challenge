@@ -1,10 +1,11 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 
-import useFetch, {UseFetchState} from "~/hooks/useFetch";
+import {UseFetchState} from "~/hooks/useFetch";
 import CatalogItem from "../CatalogItem";
 import {ProductAPIResponse} from "../Main";
+import Spinner from "../Spinner";
 
-import {StyledCatalog} from "./styles";
+import {StyledCatalog, StyledContainer} from "./styles";
 
 interface Props {
   currentPage: number;
@@ -13,11 +14,15 @@ interface Props {
 
 const Catalog: FC<Props> = ({currentPage, fetchState}) => {
   if (fetchState.state === "loading" || fetchState.state === "idle") {
-    return <div>cargando...</div>;
+    return (
+      <StyledContainer>
+        <Spinner />
+      </StyledContainer>
+    );
   }
 
   if (fetchState.state === "error" || !fetchState.data) {
-    return <div>error</div>;
+    return <div>An error has occurred</div>;
   }
 
   const catalogItems = fetchState.data
